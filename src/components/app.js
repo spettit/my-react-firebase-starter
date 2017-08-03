@@ -1,16 +1,45 @@
-import React from 'react';
-import UserList from '../containers/user-list';
-import ActiveUserComponent from '../containers/active-user-component';
+import React, { Component } from 'react';
+import * as firebase from 'firebase';
 
-function App() {
-  return (
-    <div>
-      <h1>My App</h1>
-      <UserList />
-      <ActiveUserComponent />
+import MessageList from './message-list';
+import NewMessage from './new_message';
 
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loggedInUser: 'Sean',
+      data: []
+    };
+  }
+
+  componentWillMount() {
+    const Messages = firebase.database().ref();
+    Messages.on('value', snapshot => {
+            this.setState({ data: snapshot.val() });
+    });
+  }
+
+  addMessage(e) {
+    e.preventDefault();
+    const Messages = firebase.database().ref().child('messages');
+    const txt = document.getElementById('messageInput').value;
+    const messagetxt = {
+      message_text: txt,
+      sender: this.state.loggedInUser };
+    Messages.push(messagetxt);
+  }
+
+  render() {
+    return (
+      <div id="AppDiv">
+        <h1>hotelMagic Messaging</h1>
+        <MessageList messages={this.state.data.messages} />
+        <NewMessage title="hello" addMessageFunction={this.addMessage.bind(this)} />
+      </div>
+
+    );
+  }
 }
 
 export default App;

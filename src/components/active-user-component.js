@@ -8,6 +8,4 @@ class ActiveUserComponent extends Component {
   }
 }
 
-
-
 export default ActiveUserComponent;
