@@ -7,11 +7,11 @@ const MessageListItem = styled.ul`
 `;
 
 
-class MessageList extends Component {
+class UserList extends Component {
   renderList() {
-    return _.map(this.props.messages, (value, key) => {
+    return _.map(this.props.users, (value, key) => {
       return (
-        <li key={key}>Message from {value.sender}: "{value.message_text}"</li>
+        <li key={key}>{value.first_name} {value.last_name}</li>
       );
     });
   }
@@ -25,4 +25,4 @@ class MessageList extends Component {
   }
 }
 
-export default MessageList;
+export default UserList;

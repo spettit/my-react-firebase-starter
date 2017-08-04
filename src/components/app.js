@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 
 import MessageList from './message-list';
+import UserList from './user-list';
 import NewMessage from './new_message';
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
     return (
       <div id="AppDiv">
         <h1>hotelMagic Messaging</h1>
+        <UserList users={this.state.data.users} />
         <MessageList messages={this.state.data.messages} />
         <NewMessage title="hello" addMessageFunction={this.addMessage.bind(this)} />
       </div>
