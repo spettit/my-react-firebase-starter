@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 
 import MessageList from './message-list';
-import UserList from './user-list';
 import NewMessage from './new_message';
 
 class App extends Component {
@@ -15,7 +14,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const Messages = firebase.database().ref();
+    const Messages = firebase.database().ref().child('startertemplate');
     Messages.on('value', snapshot => {
             this.setState({ data: snapshot.val() });
     });
@@ -23,7 +22,7 @@ class App extends Component {
 
   addMessage(e) {
     e.preventDefault();
-    const Messages = firebase.database().ref().child('messages');
+    const Messages = firebase.database().ref().child('startertemplate/testmessages');
     const txt = document.getElementById('messageInput').value;
     const messagetxt = {
       message_text: txt,
@@ -34,9 +33,8 @@ class App extends Component {
   render() {
     return (
       <div id="AppDiv">
-        <h1>hotelMagic Messaging</h1>
-        <UserList users={this.state.data.users} />
-        <MessageList messages={this.state.data.messages} />
+        <h1>starter template chat app</h1>
+        <MessageList messages={this.state.data.testmessages} />
         <NewMessage title="hello" addMessageFunction={this.addMessage.bind(this)} />
       </div>
 

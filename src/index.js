@@ -12,12 +12,12 @@ import App from './components/app';
 // };
 
 const config = {
-  apiKey: 'AIzaSyCyPdU2fJ4j7gPN58t_eTAdlwQiGd_YLaY',
-  authDomain: 'hotelmagic-chat.firebaseapp.com',
-  databaseURL: 'https://hotelmagic-chat.firebaseio.com',
-  projectId: 'hotelmagic-chat',
-  storageBucket: 'hotelmagic-chat.appspot.com',
-  messagingSenderId: '953780046525'
+  apiKey: "AIzaSyBdutEuqQoyVVBTobljbFcUqvSEEa8_aYA",
+  authDomain: "testingonetwothree-d260a.firebaseapp.com",
+  databaseURL: "https://testingonetwothree-d260a.firebaseio.com",
+  projectId: "testingonetwothree-d260a",
+  storageBucket: "",
+  messagingSenderId: "633335468035"
 };
 
 
