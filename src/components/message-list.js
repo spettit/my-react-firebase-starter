@@ -6,7 +6,6 @@ const MessageListItem = styled.ul`
   list-style: none;
 `;
 
-
 class MessageList extends Component {
   renderList() {
     return _.map(this.props.messages, (value, key) => {

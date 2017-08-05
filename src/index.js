@@ -4,13 +4,6 @@ import * as firebase from 'firebase';
 
 import App from './components/app';
 
-// const config = {
-// apiKey: 'AIzaSyB_VkNQ9rlwKUg0RwC5EirnT6RJE1_WfOs',
-// authDomain: 'userlist-1112f.firebaseapp.com',
-// databaseURL: 'https://userlist-1112f.firebaseio.com',
-// storageBucket: 'userlist-1112f.appspot.com',
-// };
-
 const config = {
   apiKey: "AIzaSyBdutEuqQoyVVBTobljbFcUqvSEEa8_aYA",
   authDomain: "testingonetwothree-d260a.firebaseapp.com",
@@ -19,7 +12,6 @@ const config = {
   storageBucket: "",
   messagingSenderId: "633335468035"
 };
-
 
 firebase.initializeApp(config);
 
